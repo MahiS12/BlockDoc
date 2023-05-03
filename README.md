@@ -1,65 +1,14 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-
-<!-- [![Contributors][contributors-shield]][contributors-url] -->
-<!-- [![Forks][forks-shield]][forks-url] -->
-<!-- [![Stargazers][stars-shield]][stars-url] -->
-<!-- [![Issues][issues-shield]][issues-url] -->
-<!-- [![MIT License][license-shield]][license-url] -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://oriochain.netlify.app" target='_blank'>
-    <img src="/assets/images/icon.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">BlockChain Based Documents Verfication System With-IPFS</h3>
+  <h3 aling="center">BlockDoc: A Secure and Efficient Document Verification System</h3>
 
-
-This project aims to create a secure and decentralized system for document verification using Blockchain and InterPlanetary File System (IPFS) technologies. The system stores the hash of the documents in the Blockchain network and the documents themselves in the IPFS network. This ensures that the documents cannot be tampered with or altered, and they can be easily retrieved and verified by authorized parties.
+Ensuring the authenticity of documents and identities is a critical aspect of the recruitment process, not only for corporations but also for the education sector. However, the current document verification process in India is often time-consuming and does not guarantee authenticity. Fraudulent activities, such as submitting fake or manipulated documents, are not uncommon, leading to a lack of integrity in the education system. Motivated by the aspect of trying to improve the quality of the document verification process, hence leading towards the development of the integrity of the education system, while also streamlining and speeding up the conventional process, this paper discusses a Student Document Verification System that makes use of Digital Image Processing and Blockchain Technology. The system uses Optical Character Recognition to extract data from images, generating a hash value that is compared with the hash value on the blockchain to verify document authenticity and detect fraudulent documents. The results and observations obtained highlight the potential benefits of this proposed system in streamlining and speeding up the verification process while maintaining its accuracy and reliability.
 
 ## Features
 
-- Secure document verification using Blockchain and IPFS technologies
-- Decentralized system, with no central authority or single point of failure
-- Fast and easy verification process, with no need for intermediaries or third-party services
-- User-friendly interface for document upload and verification
-- Support for multiple document types and formats
-
-## Requirements
-
-- Node.js and npm installed on your system
-- Ganache or any other Ethereum network client
-- IPFS client (optional)
-
-## Installation
-
-1. Clone this repository: 
-``https://github.com/DevAloshe/BlockChain-Based-Documents-Verfication-System-With-IPFS-main``
-
-
-2. Install the required packages:
-
-``cd BlockChain-Based-Document-Verfication-With-IPFS
-npm install``
-
-
-3. Open the application in your browser using Liver Server Extension .
-
+- Secure document verification using Image Processing and Blockchain
+- Fast and easy verification process, withour using intermediate services or third-party services
+- User-friendly interface for document upload, verification, fetching and invalidation
 
 ## Usage
 
