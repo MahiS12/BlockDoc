@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/loader.css">
+  
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet"/> 
+    <link href="../static/css/main.css" rel="stylesheet" />
+    <script src="../static/js/App.js"></script>
+    <script src="node_modules\web3\dist\web3.min.js"></script>
+    <link href="../static/css/aos.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="icon" href="../static/assets/images/icon.png" />
+    <title>Verify Certificate - BlockDoc</title>
+  </head>
+
+  <body>
+    <div class="loader-wraper">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div >
+      <i onclick="topFunction()" id="scroll-btn" class="fa-solid fa-angle-up"></i>
+    </div>
+    <!-----------------------------navbBar Start-------------------->
+  <!--NavBar Start-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-file-alt home_text"></i>
+        <span class="home_text">Block </span>Doc
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('issue')}}">Issue Certificate</a>
+            </li>   
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('verify')}}">Verify Certificate</a>
+              </li>  
+          <li class="nav-item">
+                <a class="nav-link" href="{{url_for('invalidate')}}">Invalidate Certificate</a>
+                </li>  
+            <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('getcertificate')}}">Get Certificate</a>
+                  </li>             
+            <li class="nav-item">
+          <a class="nav-link" href="{{url_for('about')}}">Team</a>
+          </li>
+      </ul>
+
+      <div class="d-flex">
+        <button
+          id="loginButton"
+          onclick="connect()"
+          class="btn main-button"
+        >Login</button>
+        <button
+          id="logoutButton"
+          onclick="disconnect()"
+          class="btn main-button"
+        > Logout</button>
+      </div>
+      </div>
+    </div>
+    </nav>
+    <!---------------------NavBar End-------------------->
+
+    <section id="about" class="about d-flex align-items-center text-light py-5" id="about">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-7" data-aos="fade-right">
+            <h1 class="main-header-section">
+               How to Verify your Documents?<br/>              
+            </h1>
+            <p class="py-2 para-light">
+              BlockDoc uses the concept of <b>'Private and Public Key Cryptography'</b> to verify the authenticity of both your documents and your identity.
+              <ul>
+                <li>Make sure you fill <b>ALL </b>the input fields</li>
+                <li>Make sure that the addresses and hashes you enter are correct</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </section>
+
+    <!--=====================Upload Document===========================-->
+      <div class="container">
+        <div class="row content m-1"> 
+          <div data-aos="fade-down" class="box wallet-status col-lg-12 d-flex flex-column my-2">
+            <i class="fa-brands fa-connectdevelop icon" aria-hidden="true"></i>
+         
+           <span id="userAddress" class="p-1">Address : <span class="text-warning">n/a</span></span>
+           <span id="network" class="p-1">Network: <span class="text-warning">n/a</span></span>
+           <span id="userBalance" class="p-1">Balance : <span class="text-warning">n/a</span></span>
+           <span id="num-hashes" class="p-1"><span class="text-warning"></span></span>
+           <span id="num-exporters" class="p-1"><span class="text-warning"></span></span>
+           
+          </div>
+          
+          <form method="post" action="{{url_for('verify')}}" enctype="multipart/form-data">
+          <div class="container d-flex align-items-center justify-content-center">
+          <div class="row">
+            <div data-aos="zoom-in" class="col-lg-4 py-3 data-upload my-3 mx-md-2">
+              <input name="uid" type="text" placeholder="Enter the Document Unique ID" required/>
+              <input name="I_add" type="text" placeholder="Enter Issuer's Address" required/>
+              <input name="U_add" type="text" placeholder="Enter User Address" required/>
+              <input name="hash" type="file" placeholder="Upload" required accept=".jpeg"/>          
+              <span id="note" class="text-danger"></span>
+          
+              <img id="loader" class="d-none" src="../static/files/loader.svg" alt="loader" />
+               {% if data %}
+                       <p style="color: aliceblue;">Certificate is valid.</p>
+                   {% else %}
+                       <p style="color: brown;">Certificate is not valid.</p>
+                   {% endif %}
+          
+              <div class="btn-container mt-3">
+                <input onclick="" class="btn btn-primary exporter-button main-button" type="submit" value="Verify Certificate" id="verify" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+    
+        </div>
+      </div>
+    </div>
+    <script src="../static/js/aos.js"></script>
+    <script src="../static/js/script.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules\web3\dist\web3.min.js"></script>
+    
+    <!--=====================Start Code===========================-->
+    <script defer>
+  document.getElementById("Exporter-address").onclick= ()=>{
+  $("#note").html(``);
+  $("#ExporterBtn").attr("disabled", false);
+  $("#edit").attr("disabled", false);
+  $("#delete").attr("disabled", false);
+}
+ 
+    </script>
+  </body>
+</html>

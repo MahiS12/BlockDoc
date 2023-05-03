@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description" />
+    <meta name="author" content="Your name" />
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <!-- website link -->
+    <!-- title shown in the actual shared post -->
+
+    <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="#ABOUT" />
+    <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>BlockDoc</title>
+    <link rel="stylesheet" href="../static/css/loader.css">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link href="../static/css/aos.min.css" rel="stylesheet" />
+    <link href="../static/css/main.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="loader-wraper">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+  <!--NavBar Start-->
+       <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <i class="fa-solid fa-file-alt home_text"></i>
+            <span class="home_text">Block </span>Doc
+            </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('issue')}}">Issue Certificate</a>
+                </li>   
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('verify')}}">Verify Certificate</a>
+                  </li>  
+              <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('invalidate')}}">Invalidate Certificate</a>
+                    </li>  
+                <li class="nav-item">
+                      <a class="nav-link" href="{{url_for('getcertificate')}}">Get Certificate</a>
+                      </li>             
+                <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about')}}">Team</a>
+              </li>
+          </ul>
+          </div>
+        </div>
+        </nav>
+
+    <!-- Home -->
+    <section class="home py-5 d-flex align-items-center" id="header">
+<video autoplay muted loop id="myVideo">
+  <source src="../static/files/earth.mp4" type="video/mp4">
+</video>
+      <div class="container  text text-light py-5" data-aos="fade-right">
+        <h1 class="headline text">
+          Use <span class="text-info">Blockchain</span> and <br>
+           <span class="text-info">Image Processing</span><br> to
+          verify your Documents
+        </h1>
+        <p class="para  py-3">
+          BlockDoc is a Document Verification Solution <br> 
+          designed to bring efficiency and security to your operations.
+        </p>
+
+        <!-- <div class="my-3">
+          <a class="btn bg-danger text-white" href="admin.html">Go Verify</a>
+        </div> -->
+        
+      </div>
+      <!-- end of container -->
+    </section>
+    <!-- end of home -->
+
+   <!-- About -->
+    <section id="about" class="about d-flex align-items-center text-light py-5" id="about">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-7" data-aos="fade-right">
+            <p  class="main-header-section">ABOUT BLOCKDOC</p>
+            <h1>
+              Image Processing + Blockchain <br/>
+              
+            </h1>
+            <p class="py-2 para-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed
+              accusantium aut dolores inventore architecto modi cupiditate
+              eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum
+              voluptatum quisquam ad veritatis dolorem.
+            </p>
+            <p class="py-2 para-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sed
+              accusantium aut dolores inventore architecto modi cupiditate
+              eligendi corporis, illum illo culpa. Reiciendis, molestias. Illum
+              voluptatum quisquam ad veritatis dolorem.
+            </p>
+          </div>
+          <div class="col-lg-3 text-center py-4 py-sm-0" data-aos="fade-down">
+            <img
+              class="img-fluid"
+              src="../static/assets/images/about-section.jpg"
+              alt="about"
+            />
+          </div>
+        </div>
+        <!-- end of row -->
+      </div>
+      <!-- end of container -->
+    </section>
+    <!-- end of about -->
+
+    <div >
+      <i onclick="topFunction()" id="scroll-btn" class="fa-solid fa-angle-up"></i>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>    <!-- Bootstrap framework -->
+    <script src="../static/js/purecounter.min.js"></script>
+    <script src="../static/js/aos.js"></script>
+    <script src="../static/js/script.js"></script>
+    <!-- <script defer>changeBackground();</script> -->
+    <!-- <div class="butterfly">
+    </div> -->
+
+    <script defer>
+      // const butterfly = document.querySelector(".butter");
+      //   setInterval(()=>{
+      //   butterfly.style.left = window.innerWidth*Math.random() +"px";
+      //   butterfly.style.top =  window.innerHeight*Math.random() + "px";
+      //   },4000)
+  $(".loader-wraper").fadeOut("slow");
+    </script>
+
+  </body>
+</html>
